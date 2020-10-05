@@ -7,6 +7,7 @@ services:
       - 13000:5000
     depends_on:
       - redis
+      - postgres
 
 
   client:
@@ -22,6 +23,13 @@ services:
       - redis-data:/redis/data
     command:
       - '--save 1 1'
+
+  postgres:
+    image: 'postgres'
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
 
 volumes:
   redis-data:
