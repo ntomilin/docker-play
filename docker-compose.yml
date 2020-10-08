@@ -29,7 +29,12 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=docker
+    volumes:
+      - dbdata:/psql/data
 
 volumes:
   redis-data:
+  dbdata:

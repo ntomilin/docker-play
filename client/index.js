@@ -15,5 +15,5 @@ xhr.onload = function() {
 
     index.innerText = response['counter'];
 
-    name.innerText = response['name'] || 'a';
+    name.innerText = response['name'];
 };
